@@ -15292,6 +15292,10 @@ const dictionary = [
 
 const WORD_LENGTH = 5;
 const guessGrid = document.querySelector("[data-guess-grid]");
+const offSetFromDate = new Date(2023, 3, 10);
+const msOffset = Date.now() - offSetFromDate;
+const dayOffset = msOffset / 1000 / 60 / 60 / 24;
+const targetWord = targetWords[Math.floor(dayOffset)];
 
 startInteraction();
 
@@ -15351,6 +15355,13 @@ function deleteKey() {
   lastTile.textContent = "";
   delete lastTile.dataset.state;
   delete lastTile.dataset.letter;
+}
+
+function submitGuess() {
+  const activeTiles = [...getActiveTiles()];
+  if (activeTiles.length !== WORD_LENGTH) {
+      return;
+  }
 }
 
 function getActiveTiles() {
