@@ -27,7 +27,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(var(--hue, 200),
+  background-color: hsl(
+    var(--hue, 200),
     var(--saturation, 1%),
     calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
   );
@@ -61,4 +62,27 @@ body {
   --hue: 115;
   --saturation: 29%;
   --lightness: 43%;
+}
+.guess-grid {
+  display: grid;
+  place-content: center center;
+  flex-grow: 1;
+  grid-template-columns: repeat(5, 4em);
+  grid-template-rows: repeat(6, 4em);
+  gap: 0.25em;
+  margin-bottom: 1em;
+}
+.tile {
+  color: #ffffff;
+  border: 0.05em solid hsl(240, 2%, 23%);
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.tile[data-state="active"] {
+  border-color: hsl(200, 1%, 34%);
 }
