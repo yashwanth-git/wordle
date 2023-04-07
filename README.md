@@ -11,5 +11,5 @@ Idea is to clone the wordle game
 ## Todos
 
 - [x] Check delete mouse key press [bug]
-- [ ] Make fetch request for dictionary and target [best-practice]
+- [x] Make fetch request for dictionary and target [best-practice]
 - [ ] Go Live [deploy]
