@@ -15291,7 +15291,9 @@ const dictionary = [
 ];
 
 const WORD_LENGTH = 5;
+const FLIP_ANIMATION_DURATION = 500;
 const guessGrid = document.querySelector("[data-guess-grid]");
+const keyboard = document.querySelector("[data-keyboard]");
 const alertContainer = document.querySelector("[data-alert-container]");
 const offSetFromDate = new Date(2023, 3, 10);
 const msOffset = Date.now() - offSetFromDate;
@@ -15365,6 +15367,27 @@ function submitGuess() {
     shakeTiles(activeTiles);
     return;
   }
+
+  const guess = activeTiles.reduce((word, tile) => {
+    return word + tile.dataset.letter;
+  }, "");
+
+  if (!dictionary.includes(guess)) {
+    showAlert("Not in the list");
+    shakeTiles(activeTiles);
+    return;
+  }
+
+  stopInteraction();
+  activeTiles.forEach((...params) => flipTile(...params, guess));
+}
+
+function flipTile(tile, index, array, guess) {
+  const letter = tile.dataset.letter;
+  const key = keyboard.querySelector(`[data-key="${letter}"]`);
+  setTimeout(() => {
+    tile.classList.add("flip");
+  }, (index * FLIP_ANIMATION_DURATION) / 2);
 }
 
 function getActiveTiles() {

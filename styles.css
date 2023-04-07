@@ -101,6 +101,9 @@ body {
 .tile.shake {
   animation: shake 250ms ease-in-out;
 }
+.tile.flip{
+    background:red;
+}
 
 @keyframes shake {
   10% {
