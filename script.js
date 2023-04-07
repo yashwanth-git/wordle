@@ -15385,3 +15385,16 @@ function showAlert(message, duration = 1000) {
     });
   }, duration);
 }
+
+function shakeTiles(tiles) {
+  tiles.forEach((tile) => {
+    tile.classList.add("shake");
+    tile.addEventListener(
+      "animationend",
+      () => {
+        tile.classList.remove("shake");
+      },
+      { once: true }
+    );
+  });
+}
