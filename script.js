@@ -15322,7 +15322,7 @@ function handleMouseClick(e) {
     submitGuess();
     return;
   }
-  if (e.target.matches("[data-delete")) {
+  if (e.target.matches("[data-delete]")) {
     deleteKey();
     return;
   }

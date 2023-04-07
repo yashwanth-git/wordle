@@ -10,6 +10,6 @@ Idea is to clone the wordle game
 - Playing with css vars. Used it to handle multiple states in the game
 ## Todos
 
-- [ ] Check delete mouse key press [bug]
+- [x] Check delete mouse key press [bug]
 - [ ] Make fetch request for dictionary and target [best-practice]
 - [ ] Go Live [deploy]
