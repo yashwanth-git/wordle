@@ -2,6 +2,9 @@ let targetWords = [];
 let dictionary = [];
 const TARGET_WORDS_URL = "targetWords.json";
 const DICTIONARY_URL = "dictionary.json";
+const WORD_LENGTH = 5;
+const FLIP_ANIMATION_DURATION = 500;
+const DANCE_DURATION = 500;
 
 fetch(TARGET_WORDS_URL)
   .then((res) => res.json())
@@ -13,9 +16,6 @@ fetch(TARGET_WORDS_URL)
         dictionary = dictionary.concat(result1);
       });
 
-    const WORD_LENGTH = 5;
-    const FLIP_ANIMATION_DURATION = 500;
-    const DANCE_DURATION = 500;
     const guessGrid = document.querySelector("[data-guess-grid]");
     const keyboard = document.querySelector("[data-keyboard]");
     const alertContainer = document.querySelector("[data-alert-container]");
